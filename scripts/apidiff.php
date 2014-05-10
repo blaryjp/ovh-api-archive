@@ -1,5 +1,12 @@
 #!/usr/bin/php
 <?php
+/**
+ * ovh-api-archive: View or compare an API archive from OVH, SYS, KS, or RunAbove.
+ *
+ * @author Jean-Philippe Blary (@blary_jp)
+ * @url https://github.com/blaryjp/ovh-api-archive
+ * @license MIT
+ */
 
 date_default_timezone_set('Europe/Paris');
 
