@@ -1,0 +1,21 @@
+<div class="btn-group btn-group-justified">
+    <a data-ng-href="#/ovh/{{currentView}}" class="btn btn-default btn-ovh" data-ng-class="{ 'btn-primary': currentApi == 'ovh' }">OVH</a>
+    <a data-ng-href="#/sys/{{currentView}}" class="btn btn-default btn-sys" data-ng-class="{ 'btn-primary': currentApi == 'sys' }">SoYouStart</a>
+    <a data-ng-href="#/ks/{{currentView}}"  class="btn btn-default btn-ks"  data-ng-class="{ 'btn-primary': currentApi == 'ks' }">Kimsufi</a>
+    <a data-ng-href="#/ra/{{currentView}}"  class="btn btn-default btn-ra"  data-ng-class="{ 'btn-primary': currentApi == 'ra' }">RunAbove</a>
+</div>
+
+<br />
+
+<div class="btn-group btn-group-justified">
+    <a class="btn btn-default"
+       data-ng-class="{ 'btn-primary': currentView == 'archive' }"
+       data-ng-disabled="!currentApi"
+       data-ng-href="#/{{currentApi}}/archive">View an API archive</a>
+    <a class="btn btn-default"
+       data-ng-class="{ 'btn-primary': currentView == 'diff' }"
+       data-ng-disabled="!currentApi"
+       data-ng-href="#/{{currentApi}}/diff">View an API diff</a>
+</div>
+
+<hr />

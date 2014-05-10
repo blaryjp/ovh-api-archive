@@ -1,0 +1,71 @@
+<div data-ng-controller="DiffCtrl">
+
+    <div class="row" data-ng-show="!loading.init">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="inputTo" class="col-sm-2 control-label">Date <small class="text-muted">(to)</small></label>
+                <div class="col-sm-10">
+                    <select class="form-control" name="inputTo"
+                            data-ng-options="date as (date | date:'MMMM d, y (EEEE)') group by (date | date:'yyyy-MM') for date in data.diffDates | orderBy:'toString()':true"
+                            data-ng-change="selectTo()"
+                            data-ng-model="model.to">
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputFrom" class="col-sm-2 control-label">Date <small class="text-muted">(from)</small></label>
+                <div class="col-sm-10">
+                    <select class="form-control" name="inputFrom"
+                            data-ng-options="date as (date | date:'MMMM d, y (EEEE)') group by (date | date:'yyyy-MM') for date in data.allDates | orderBy:'toString()':true"
+                            data-ng-model="model.from"
+                            data-ng-change="selectFrom()"
+                            data-ng-show="customFrom"
+                            data-ng-disabled="!model.from">
+                    </select>
+                    <p class="form-control-static" data-ng-show="!customFrom && model.from">
+                        <span data-ng-bind="model.from | date:'MMMM d, y (EEEE)'"></span>&nbsp;
+                        <button class="btn btn-default btn-xs" data-ng-click="customFrom = true">Modify</button>
+                    </p>
+                    <p class="form-control-static text-muted" data-ng-show="!model.from && !loading.diff">Please select a "to" date.</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputApi" class="col-sm-2 control-label">API</label>
+                <div class="col-sm-10">
+                    <select class="form-control" name="inputApi"
+                            data-ng-options="api for api in data.apis"
+                            data-ng-model="model.api"
+                            data-ng-disabled="!model.to || !data.apis">
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="row" data-ng-show="!loading.diff && model.to && model.from && model.api">
+        <h4 class="col-sm-8 col-xs-12">Difference between <small data-ng-bind="model.from"></small> and <small data-ng-bind="model.to"></small> on <small data-ng-bind="model.api"></small></h4>
+
+        <div class="col-sm-4 col-xs-12">
+            <form class="form-inline pull-right" role="form" data-ng-init="hideUnchanged = 'yep'">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="radioDiff" value="yep" data-ng-model="hideUnchanged">
+                        Show only changed values
+                    </label>
+                </div>
+                &nbsp;
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="radioDiff" value="nop" data-ng-model="hideUnchanged">
+                        Show all
+                    </label>
+                </div>
+            </form>
+        </div>
+
+        <div id="tree-diff" class="col-xs-12"></div>
+    </div>
+
+    <span class="label label-primary" data-ng-show="loading.init || loading.diff">Loading...</span>
+
+</div>

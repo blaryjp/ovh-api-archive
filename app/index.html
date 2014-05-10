@@ -1,0 +1,74 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>OVH API archives</title>
+    <meta name="description" content="OVH API archives">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="favicon.ico" />
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <link rel="stylesheet" href="bower_components/jsondiffpatch/src/formatters/html.css" />
+    <link rel="stylesheet" href="bower_components/jsondiffpatch/src/formatters/annotated.css" />
+    <!-- endbuild -->
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body data-ng-app="apidiffApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div class="container">
+        <header>
+            <h3 class="text-primary"><a href="#/" title="OVH API archives">OVH API archives</a></h3>
+        </header>
+        <br />
+        <section class="content" data-ng-controller="AppCtrl">
+            <div data-ng-view=""></div>
+        </section>
+        <br />
+    </div>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-ui-ace/ui-ace.js"></script>
+    <script src="bower_components/jsondiffpatch/build/bundle.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <!-- endbower -->
+    <script src="bower_components/ace-builds/src-noconflict/ace.js"></script>
+    <script src="bower_components/ace-builds/src-noconflict/mode-json.js"></script>
+    <script src="bower_components/ace-builds/src-noconflict/worker-json.js"></script>
+    <script src="bower_components/jsondiffpatch/external/diff_match_patch_uncompressed.js"></script>
+    <script src="bower_components/jsondiffpatch/build/formatters.js"></script>
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/archive.js"></script>
+        <script src="scripts/controllers/diff.js"></script>
+        <script src="scripts/controllers/app.js"></script>
+        <script src="scripts/services/dataset.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

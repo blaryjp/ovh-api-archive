@@ -1,0 +1,30 @@
+/*.btn-ovh {
+    color: #3167bf;
+}
+.btn-sys {
+    color: #9DC51C;
+}
+.btn-ks {
+    color: #003579;
+}
+.btn-ra {
+    color: #FF9A09;
+}*/
+
+.ace_editor { height: 500px; }
+
+#tree-archive,
+#tree-diff {
+    border: 1px solid #dfdfdf;
+    border-radius: 4px;
+}
+
+#tree-diff {
+    padding: 10px;
+}
+
+pre {
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+}
