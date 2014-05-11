@@ -1,7 +1,7 @@
 ovh-api-archive
 ===============
 
-View or compare an API archive from **OVH**, **So You Start**, **Kimsufi**, and **RunAbove**.
+View or compare an API archive from **OVH**, **SoYouStart**, **Kimsufi**, and **RunAbove**.
 
 You can:
 
