@@ -70,8 +70,6 @@ function getApis ($api_type, $api_basepath) {
     }
 
     logger("[END $api_type] Get all schemas. [" . (microtime(true) - $timer_main) . "s]\n");
-
-    unset($timer_main, $timer, $dir, $api_root, $decoded_api_root, $matches, $all_dir, $decoded_all_file);
 };
 
 
@@ -133,8 +131,6 @@ function getApiDiff ($api_type) {
     }
 
     logger("[END $api_type] Check for diff between " . YESTERDAY . " and " . TODAY . ". [" . (microtime(true) - $timer_main) . "s]\n");
-
-    unset($timer_main, $timer, $dir_from, $dir_to, $api_from, $api_to, $diff, $decoded_api_to, $matches, $from, $to, $diff_dir, $decoded_diff_file);
 };
 
 // ---
