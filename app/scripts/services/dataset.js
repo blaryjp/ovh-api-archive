@@ -31,19 +31,27 @@ angular.module('apidiffApp').service('Dataset', function Dataset ($http, $routeP
         });
     };
 
+    this.getLastSnapshotDate = function () {
+        return $http.get(BASE_URL_DATASET + 'dataset/last.json', {
+            params: { '_' : Date.now() }
+        }).then(function (result) {
+            return JSON.parse(result.data);
+        });
+    };
+
     this.getAllDates = function () {
         return $http.get(BASE_URL_DATASET + 'dataset/' + $routeParams.api + '/all.json', {
             params: { '_' : Date.now() }
-        }).then(function (data) {
-            return data.data;
+        }).then(function (result) {
+            return result.data;
         });
     };
 
     this.getDiffDates = function () {
         return $http.get(BASE_URL_DATASET + 'dataset/' + $routeParams.api + '/diff.json', {
             params: { '_' : Date.now() }
-        }).then(function (data) {
-            return data.data;
+        }).then(function (result) {
+            return result.data;
         });
     };
 

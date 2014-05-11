@@ -111,7 +111,7 @@ angular.module('apidiffApp').controller('DiffCtrl', function ($scope, $q, $locat
     });
 
     $scope.$watch('hideUnchanged', function () {
-        if ($scope.hideUnchanged === 'yep') {
+        if ($scope.hideUnchanged) {
             jsondiffpatch.formatters.html.hideUnchanged();
         } else {
             jsondiffpatch.formatters.html.showUnchanged();

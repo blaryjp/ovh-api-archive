@@ -46,17 +46,17 @@
         <h4 class="col-sm-8 col-xs-12">Difference between <small data-ng-bind="model.from"></small> and <small data-ng-bind="model.to"></small> on <small data-ng-bind="model.api"></small></h4>
 
         <div class="col-sm-4 col-xs-12">
-            <form class="form-inline pull-right" role="form" data-ng-init="hideUnchanged = 'yep'">
+            <form class="form-inline pull-right" role="form" data-ng-init="hideUnchanged = true">
                 <div class="radio">
                     <label>
-                        <input type="radio" name="radioDiff" value="yep" data-ng-model="hideUnchanged">
+                        <input type="radio" name="radioDiff" data-ng-value="true" data-ng-model="hideUnchanged">
                         Show only changed values
                     </label>
                 </div>
                 &nbsp;
                 <div class="radio">
                     <label>
-                        <input type="radio" name="radioDiff" value="nop" data-ng-model="hideUnchanged">
+                        <input type="radio" name="radioDiff" data-ng-value="false" data-ng-model="hideUnchanged">
                         Show all
                     </label>
                 </div>

@@ -7,7 +7,7 @@
  */
 'use strict';
 
-angular.module('apidiffApp').controller('MainCtrl', function ($scope, $routeParams, $location) {
+angular.module('apidiffApp').controller('MainCtrl', function ($scope, $routeParams, $location, Dataset) {
 
     if (($routeParams.api && !~['ovh', 'sys', 'ks', 'ra'].indexOf($routeParams.api)) ||
         ($routeParams.view && !~['archive', 'diff'].indexOf($routeParams.view))) {
@@ -16,5 +16,10 @@ angular.module('apidiffApp').controller('MainCtrl', function ($scope, $routePara
         $scope.currentApi = $routeParams.api;
         $scope.currentView = $routeParams.view;
     }
+
+    // Get the date of the last snapshot taken
+    Dataset.getLastSnapshotDate().then(function (lastSnapshot) {
+        $scope.lastSnapshot = lastSnapshot;
+    });
 
 });

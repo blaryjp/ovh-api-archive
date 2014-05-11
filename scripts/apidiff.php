@@ -24,8 +24,8 @@ $RA  = 'https://manager.runabove.com/api/1.0';
 
 // Some log
 function logger ($str) {
-    // echo $str;
-    file_put_contents(BASEPATH . 'msg.log', $str, FILE_APPEND);
+    echo $str;
+    // file_put_contents(BASEPATH . 'msg.log', $str, FILE_APPEND);
 };
 
 // Get API JSONs
@@ -153,6 +153,9 @@ getApiDiff('ovh');
 getApiDiff('sys');
 getApiDiff('ks');
 getApiDiff('ra');
+
+// Save the current datetime into the "last.json" file
+file_put_contents(BASEPATH . '/last.json', json_encode(date("c")));
 
 logger("Job finished for " . TODAY . " at " . date("c") . ". Total time: " . (microtime(true) - $timer_main) . "s.\n");
 
