@@ -9,7 +9,7 @@
 
 angular.module('apidiffApp').controller('MainCtrl', function ($scope, $routeParams, $location, Dataset) {
 
-    if (($routeParams.api && !~['ovh', 'sys', 'ks', 'ra'].indexOf($routeParams.api)) ||
+    if (($routeParams.api && !~['ovh-eu', 'ovh-ca', 'ovh-us', 'sys', 'ks', 'ra'].indexOf($routeParams.api)) ||
         ($routeParams.view && !~['archive', 'diff'].indexOf($routeParams.view))) {
         $location.path('/');
     } else {

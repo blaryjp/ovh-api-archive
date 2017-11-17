@@ -1,10 +1,11 @@
 <p class="text-muted pull-right last-snapshot">Last snapshot: {{lastSnapshot | date:'MMMM d, y HH:mm (Z)'}}</p>
 
 <div class="btn-group btn-group-justified">
-    <a data-ng-href="#/ovh/{{currentView}}" class="btn btn-default btn-ovh" data-ng-class="{ 'btn-primary': currentApi == 'ovh' }">OVH</a>
+    <a data-ng-href="#/ovh-eu/{{currentView}}" class="btn btn-default btn-ovh-eu" data-ng-class="{ 'btn-primary': currentApi == 'ovh-eu' }">OVH-EU</a>
+    <a data-ng-href="#/ovh-ca/{{currentView}}" class="btn btn-default btn-ovh-ca" data-ng-class="{ 'btn-primary': currentApi == 'ovh-ca' }">OVH-CA</a>
+    <a data-ng-href="#/ovh-us/{{currentView}}" class="btn btn-default btn-ovh-us" data-ng-class="{ 'btn-primary': currentApi == 'ovh-us' }">OVH-US</a>
     <a data-ng-href="#/sys/{{currentView}}" class="btn btn-default btn-sys" data-ng-class="{ 'btn-primary': currentApi == 'sys' }">SoYouStart</a>
     <a data-ng-href="#/ks/{{currentView}}"  class="btn btn-default btn-ks"  data-ng-class="{ 'btn-primary': currentApi == 'ks' }">Kimsufi</a>
-    <a data-ng-href="#/ra/{{currentView}}"  class="btn btn-default btn-ra"  data-ng-class="{ 'btn-primary': currentApi == 'ra' }">RunAbove</a>
 </div>
 
 <br />

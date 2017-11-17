@@ -10,15 +10,15 @@
 
 date_default_timezone_set('Europe/Paris');
 
-// define('BASEPATH', '../sandbox/apidiff/dataset/');
 define('BASEPATH', '../dataset/');
 define('TODAY', date("Y-m-d"));
 define('YESTERDAY', date("Y-m-d", time() - 60 * 60 * 24));
 
-$OVH = 'https://api.ovh.com/1.0';
+$OVHEU = 'https://eu.api.ovh.com/1.0';
+$OVHCA = 'https://ca.api.ovh.com/1.0';
+$OVHUS = 'https://us.api.ovh.com/1.0';
 $SYS = 'https://eu.soyoustart.com/fr/manager/api/1.0';
 $KS  = 'https://www.kimsufi.com/fr/manager/api/1.0';
-$RA  = 'https://manager.runabove.com/api/1.0';
 
 // ---
 
@@ -38,7 +38,7 @@ function getApis ($api_type, $api_basepath) {
 
     // Create the dir for today
     if (!file_exists($dir)) {
-        mkdir($dir, 0755);
+        mkdir($dir, 0755, true);
     }
 
     // Get API main schema, and save it
@@ -140,15 +140,17 @@ function getApiDiff ($api_type) {
 $timer_main = microtime(true);
 logger("Job started for " . TODAY . " at " . date("c") . ".\n");
 
-getApis('ovh', $OVH);
+getApis('ovh-eu', $OVHEU);
+getApis('ovh-ca', $OVHCA);
+getApis('ovh-us', $OVHUS);
 getApis('sys', $SYS);
 getApis('ks', $KS);
-getApis('ra', $RA);
 
-getApiDiff('ovh');
+getApiDiff('ovh-eu');
+getApiDiff('ovh-ca');
+getApiDiff('ovh-us');
 getApiDiff('sys');
 getApiDiff('ks');
-getApiDiff('ra');
 
 // Save the current datetime into the "last.json" file
 file_put_contents(BASEPATH . '/last.json', json_encode(date("c")));
